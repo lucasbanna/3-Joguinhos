@@ -18,126 +18,267 @@ int main() {
     
     int egua;
     
-    while ((j1[0] <5 || j1[1] < 5) && (j2[0] < 5 || j2[1] < 5)  ) {	
-    	
-		system("cls"); // limpar a tela
-		
-		printf("NUMERO DO JOGADOR: %d\n\n", gamer);
-		printf("======================================================================================================\n");
-		printf("JOGADOR 1:\t\t");
-    	
-		if (j1[0] < 5) {
-			printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
-		} 
-		else if (j1[0] > 5){
-			j1[0] -= 5;
-			printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
-		} 
-		else {	
-			printf("Mão direita ELIMINADA\t\t");    	
-		}
-		//====================================
-		if (j1[1] < 5) {
-			printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
-		}
-		else if (j1[1] > 5) {
-			j1[1] -= 5;
-			printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
-		}
-		else {
-			printf("Mão esquerda ELIMINADA\t\t\n"); 
-		}   	
-		//===================================
-		printf("======================================================================================================\n");
-    	printf("JOGADOR 2:\t\t");
-    	
-		if (j2[0] < 5) { 
-			printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
-		}
- 		else if (j2[0] > 5) {
-			j2[0] -= 5;
-			printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
-		}
-		 else {
-		  printf("Mão direita ELIMINADA\t\t");
-		}  
-		//====================================  	
-    	
-		if (j2[1] < 5) { 
-			 printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
-		}
-		else if (j2[1] > 5){
-			 	j2[1] -= 5;
-			printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
-		}
-		else {	
-		  printf("Mão esquerda ELIMINADA\t\t\n");
-		}  
-		//====================================
-		printf("======================================================================================================\n\n");
-    	
-    	
-    	// AGUARDA JOGAS INFORMAR A CAO QUE DESEJA EXECUTAR
-    	printf("JOGADOR %d, QUE AÇÃO VOCÊ DESEJA EXECUTAR? (1-Atacar 2-Socorrer 0-Sair)\n", gamer);
-    	scanf("%d", &acao);
-    	fflush(stdin);
-	 
-		// INFORMA O TIPO DE AÇÃO ESCOLHIDO	PELO JOGADOR E CRIA REGRA DE NEGÓCIOS PARA CADA ACAO
-    	if (acao == 1 ) { // SE ACAO FOR ATACAR
-    		printf("\nVocê escolheu ATACAR\n");
-    		printf("\nCom qual das suas mãos você quer atacar? (1-Direita 2-Esquerda)\n");
-    		scanf("%d", &maoAttack);
-    			
-    		printf("\nQual mão do seu adversário você quer atacar? (1-Direita 2-Esquerda)\n");
-    		scanf("%d", &maoDefesa);
-    		
-    		int maoAttackcor = maoAttack - 1;
-    		int maoDefesacor = maoDefesa - 1;
-    		
-			if (gamer == 1) {//SE FOR JOGADOR 1
-    			j2[maoDefesacor] = j1[maoAttackcor] + j2[maoDefesacor];
-			} 
-			else if (gamer == 2) { // SE FOR JOGADOR 2
-    			j1[maoDefesacor] = j2[maoAttackcor] + j1[maoDefesacor];
-			}		
-    		
-		} 
-		else if (acao == 2) { // SE AÇÃO FOR SOCORRER
-			printf("Você escolheu SOCORRER.\n");
-			if (gamer == 1 && (j1[0]+j1[1]) % 2 ==0){
-				j1[0] = j1[1] = (j1[0]+j1[1])/2; 
-			}
-			else {
-				printf("operação inválida\n");
-			}	
-				
-			if (gamer ==2 && (j2[0]+j2[1]) % 2 == 0){
-				j2[0] = j2[1] = (j2[0]+j2[1])/2; 
-			}
-			else {
-				printf("operação inválida\n");
-			}	
-			}
-		else if (acao == 0) {
-			system("cls");
-			printf("\n======================================================================================================\n");
-			printf("                                    OBRIGADO POR JOGAR!\n");
+    int ordem; 
+    
+    
+	    while ((j1[0] <5 || j1[1] < 5 || j1[0] > 5 || j1 [1] > 5) && (j2[0] < 5 || j2[1] < 5 || j2[0] > 5 || j2[1] > 5)  ) {	
+	    	
+			system("cls"); // limpar a tela
+			
+			printf("NUMERO DO JOGADOR: %d\n\n", gamer);
 			printf("======================================================================================================\n");
-			return 0;
-		}
+			printf("JOGADOR 1:\t\t");
+	    	
+			if (j1[0] < 5) {
+				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+			} 
+			else if (j1[0] > 5){
+				j1[0] -= 5;
+				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+			} 
+			else {	
+				printf("Mão direita ELIMINADA\t\t");    	
+			}
+			//====================================
+			if (j1[1] < 5) {
+				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+			}
+			else if (j1[1] > 5) {
+				j1[1] -= 5;
+				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+			}
+			else {
+				printf("Mão esquerda ELIMINADA\t\t\n"); 
+			}   	
+			//===================================
+			printf("======================================================================================================\n");
+	    	printf("JOGADOR 2:\t\t");
+	    	
+			if (j2[0] < 5) { 
+				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+			}
+	 		else if (j2[0] > 5) {
+				j2[0] -= 5;
+				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+			}
+			 else {
+			  printf("Mão direita ELIMINADA\t\t");
+			}  
+			//====================================  	
+	    	
+			if (j2[1] < 5) { 
+				 printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+			}
+			else if (j2[1] > 5){
+				 	j2[1] -= 5;
+				printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+			}
+			else {	
+			  printf("Mão esquerda ELIMINADA\t\t\n");
+			}  
+			//====================================
+			printf("======================================================================================================\n\n");
+	    	
+	    	
+	    	// AGUARDA JOGAS INFORMAR A CAO QUE DESEJA EXECUTAR
+	    	printf("JOGADOR %d, QUE AÇÃO VOCÊ DESEJA EXECUTAR? (1-Atacar 2-Socorrer 0-Sair)\n", gamer);
+	    	scanf("%d", &acao);
+	    	fflush(stdin);
+		 
+			// INFORMA O TIPO DE AÇÃO ESCOLHIDO	PELO JOGADOR E CRIA REGRA DE NEGÓCIOS PARA CADA ACAO
+	    	if (acao == 1 ) { // SE ACAO FOR ATACAR
+	    		printf("\nVocê escolheu ATACAR\n");
+	    	
+	    		printf("\nCom qual das suas mãos você quer atacar? (1-Direita 2-Esquerda)\n");
+	    		scanf("%d", &maoAttack);
+	    		int maoAttackcor = maoAttack - 1;
+	    			
+	    			if (maoAttackcor < 0 || maoAttackcor > 1 || (gamer == 1 && j1[maoAttackcor] == 5) || (gamer == 2 && j2
+					[maoAttackcor] == 5)) {
+						printf("Mão inválida! Escolha uma mão que ainda esteja ativa.\n");
+						continue;}
+					
+					else { 	
+   	   	    
+	    			printf("\nQual mão do seu adversário você quer atacar? (1-Direita 2-Esquerda)\n");
+	    			scanf("%d", &maoDefesa);
+					int maoDefesacor = maoDefesa - 1;
+	    			
+	    					if (maoDefesacor < 0 || maoDefesacor > 1 || (gamer == 1 && j2[maoDefesacor] == 5) || (gamer == 2 && j1[maoDefesacor] == 5)) {
+	    						printf("Mão inválida! Escolha uma mão que ainda esteja ativa.\n");
+								continue;}
+	    					else {	   	
+    		
+	    		
+									if (gamer == 1) {//SE FOR JOGADOR 1
+	    									j2[maoDefesacor] = j1[maoAttackcor] + j2[maoDefesacor];
+									} 
+									else { // SE FOR JOGADOR 2
+	    									j1[maoDefesacor] = j2[maoAttackcor] + j1[maoDefesacor];
+									}	
+		 		 		 		
+	    		
+							}			
+					} 
+			} 
+			else if (acao == 2) { // SE AÇÃO FOR SOCORRER
+				printf("Você escolheu SOCORRER.\n");
+			
+				if (gamer == 1) {
+					if ((j1[0]+j1[1]) % 2 == 0 && !(j1[0] == j1[1])){
+						j1[0] = j1[1] = (j1[0]+j1[1])/2;
+	  	  	  	    }	
+				
+					else{
+					
+						if (j1[1] == 5 && (j1[0] += 0) % 2 == 0 ){
+							j1[1] = 0;
+							j1[0] = j1[1] = (j1[0]+j1[1])/2; 	
+						
+						}
+					
+						else if(j1[0] == 5 && (j1[1] += 0) % 2 == 0 ) {
+							j1[0] = 0	;
+							j1[1] = j1[0] = (j1[0]+j1[1]/2)	;
+						}
+					
+						else{
+							printf("operação inválida\n");
+							continue;
+						}
+					}
+				}
+			 
+				
+				
+				if (gamer == 2) {
+					if ((j2[0]+j2[1]) % 2 == 0 && !(j2[0] == j2[1])){
+						j2[0] = j2[1] = (j2[0]+j2[1])/2;
+					}
+				
+					else{
+					
+						if (j2[1] == 5 && (j2[0] += 0) % 2 == 0 ){
+							j2[1] = 0;
+							j2[0] = j2[1] = (j2[0]+j2[1])/2; 	
+						
+						}
+					
+						else if(j2[0] == 5 && (j2[1] += 0) % 2 == 0 ) {
+							j2[0] = 0;
+							j2[1] = j2[0] = (j2[0]+j2[1])/2;
+						}
+						
+						else if(j2[0] == j2[1]) {
+							printf("operação inválida\n");
+							continue;
+							
+						}
+				
+				
+						else {
+							printf("operação inválida\n");
+							continue;
+				
+							}
+		 		    }		
+				}
+			}
+			
+			
+			else if (acao == 0) {
+				system("cls");
+				printf("\n======================================================================================================\n");
+				printf("                                    OBRIGADO POR JOGAR!\n");
+				printf("======================================================================================================\n");
+				return 0;
+			}
+			
+			else {
+				system("cls");
+				printf("\nBoa tentativa.\n 1-Desculpa\n 2-Perdão\n");
+				scanf("%d", &egua);
+				continue;
+			}
+			
+			// ALTERA A VARIAVEL GAMER PARA 1 OU 2 NO FINAL DA JOGADA
+			gamer = (gamer == 1) ? 2 : 1;
+				
+			} 
 		
-		else {
-			system("cls");
-			printf("\nBoa tentativa.\n 1-Desculpa\n 2-Perdão\n");
-			scanf("%d", &egua);
-			continue;
-		}
+		// FIM DO JOGO ========================================================================================
 		
-		// ALTERA A VARIAVEL GAMER PARA 1 OU 2 NO FINAL DA JOGADA
-		gamer = (gamer == 1) ? 2 : 1;
+		system("cls");
+			
+			printf("NUMERO DO JOGADOR: %d\n\n", gamer);
+			printf("======================================================================================================\n");
+			printf("JOGADOR 1:\t\t");
+	    	
+			if (j1[0] < 5) {
+				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+			} 
+			else if (j1[0] > 5){
+				j1[0] -= 5;
+				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+			} 
+			else {	
+				printf("Mão direita ELIMINADA\t\t");    	
+			}
+			//====================================
+			if (j1[1] < 5) {
+				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+			}
+			else if (j1[1] > 5) {
+				j1[1] -= 5;
+				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+			}
+			else {
+				printf("Mão esquerda ELIMINADA\t\t\n"); 
+			}   	
+			//===================================
+			printf("======================================================================================================\n");
+	    	printf("JOGADOR 2:\t\t");
+	    	
+			if (j2[0] < 5) { 
+				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+			}
+	 		else if (j2[0] > 5) {
+				j2[0] -= 5;
+				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+			}
+			 else {
+			  printf("Mão direita ELIMINADA\t\t");
+			}  
+			//====================================  	
+	    	
+			if (j2[1] < 5) { 
+				 printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+			}
+			else if (j2[1] > 5){
+				 	j2[1] -= 5;
+				printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+			}
+			else {	
+			  printf("Mão esquerda ELIMINADA\t\t\n");
+			  
+			  
+			}  
+			//====================================
+			printf("======================================================================================================\n\n");
+			
+			if (j1[0] <5 && j1[1] < 5){
+				printf("Jogador 1 foi o vencedor!\n");
+			}
+			if(j2[0] <5 && j2[1] < 5){
+				printf("Jogador 2 foi o vencedor!\n");
+			}
+			
+				printf("\n======================================================================================================\n");
+				printf("                                    OBRIGADO POR JOGAR!\n");
+				printf("======================================================================================================\n");
+				printf("1-continuar\n2-voltar ao menu\n");
+				scanf("%d", &ordem);
 
-    	
-	}
-	
-	
-	
+		
+   	   //============================================================================================	
+}
