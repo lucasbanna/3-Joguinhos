@@ -2,9 +2,18 @@
 #include <stdlib.h>
 #include <locale.h>
 
+#define RESET   "\x1B[0m"
+#define RED     "\x1B[31m"
+#define BLUE    "\x1B[34m"
+#define CYAN 	"\e[0;96m"
+#define MAGENTA "\x1B[35m"
+#define BEGE 	"\033[38;5;138m"
+#define YELLOW  "\x1B[33m"
+
 int main() {
 	
 	setlocale(LC_ALL,"");
+    
     
     int j1[2] = {1,1}; // MAOS DO JOGADOR 1 INICIANDO COM UM DEDO CADA
     int j2[2] = {1,1}; // MAOS DO JOGADOR 2 INICIANDO COM UM DEDO CADA
@@ -20,92 +29,131 @@ int main() {
     
     int ordem; 
     
+    int conf;
+    
     
 	    while ((j1[0] <5 || j1[1] < 5 || j1[0] > 5 || j1 [1] > 5) && (j2[0] < 5 || j2[1] < 5 || j2[0] > 5 || j2[1] > 5)  ) {	
 	    	
 			system("cls"); // limpar a tela
 			
-			printf("NUMERO DO JOGADOR: %d\n\n", gamer);
-			printf("======================================================================================================\n");
-			printf("JOGADOR 1:\t\t");
+			printf("Grimórios_&_Pergaminhos versão 0.alguma coisa\n\n");
+			
+			if(gamer == 1){
+				printf(YELLOW "TURNO DOS " RESET);
+				printf(RED "FEITICEIROS!\n\n" RESET);
+
+			}
+			
+			else{
+				printf(YELLOW "TURNO DOS " RESET);
+				printf(BLUE "MAGOS!\n\n" RESET);
+			}
+			
+			
+			printf(BEGE "======================================================================================================\n" RESET);
+			printf(RED"FEITICEIROS:\t\t"RESET);
 	    	
 			if (j1[0] < 5) {
-				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+				printf("Edranyl:");
+				printf(CYAN " %d° Ciclo de Mana\t\t" RESET, j1[0]);
 			} 
 			else if (j1[0] > 5){
 				j1[0] -= 5;
-				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+				printf( "Edranyl:"); 
+				printf(CYAN " %d° Ciclo de Mana\t\t" RESET , j1[0]);
 			} 
 			else {	
-				printf("Mão direita ELIMINADA\t\t");    	
+				printf(MAGENTA "Edranyl Paralisado\t\t\t" RESET);    	
 			}
 			//====================================
 			if (j1[1] < 5) {
-				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+				printf("Alaric:\t");
+				printf (CYAN "%d° Ciclo de Mana\t\t\n" RESET, j1[1]);
 			}
 			else if (j1[1] > 5) {
 				j1[1] -= 5;
-				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+				printf("Alaric:\t");
+				printf(CYAN"%d° Ciclo de Mana\t\t\n" RESET, j1[1]);
 			}
 			else {
-				printf("Mão esquerda ELIMINADA\t\t\n"); 
+				printf(MAGENTA "Alaric\tParalisado\t\t\n" RESET); 
 			}   	
 			//===================================
-			printf("======================================================================================================\n");
-	    	printf("JOGADOR 2:\t\t");
+			printf(BEGE "======================================================================================================\n" RESET);
+	    	printf(BLUE "MAGOS:\t\t\t" RESET);
 	    	
 			if (j2[0] < 5) { 
-				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+				printf("Gardel:\t");
+				printf(CYAN " %d° Ciclo de Mana \t\t" RESET, j2[0]);
 			}
 	 		else if (j2[0] > 5) {
 				j2[0] -= 5;
-				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+				printf("Gardel:\t");
+				printf(CYAN " %d° Ciclo de Mana(s)\t\t" RESET, j2[0]);
 			}
 			 else {
-			  printf("Mão direita ELIMINADA\t\t");
+			  printf(MAGENTA "Gardel\t Paralisado\t\t\t" RESET);
 			}  
 			//====================================  	
 	    	
 			if (j2[1] < 5) { 
-				 printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+				 printf("Esdras:\t"); 
+				 printf(CYAN "%d° Ciclo de Mana\t\t\n" RESET, j2[1]);
 			}
 			else if (j2[1] > 5){
 				 	j2[1] -= 5;
-				printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+				printf("Esdras:\t");
+				printf(CYAN "%d° Ciclo de Mana\t\t\n" RESET, j2[1]);
 			}
 			else {	
-			  printf("Mão esquerda ELIMINADA\t\t\n");
+			  printf(MAGENTA"Esdras\tParalisado\t\t\n"RESET);
 			}  
 			//====================================
-			printf("======================================================================================================\n\n");
+			printf(BEGE "======================================================================================================\n\n" RESET);
 	    	
 	    	
 	    	// AGUARDA JOGAS INFORMAR A CAO QUE DESEJA EXECUTAR
-	    	printf("JOGADOR %d, QUE AÇÃO VOCÊ DESEJA EXECUTAR? (1-Atacar 2-Socorrer 0-Sair)\n", gamer);
+	    	printf(YELLOW "JOGADOR %d, QUAL AÇÃO VOCÊ DESEJA EXECUTAR?" RESET, gamer);
+			printf(" (1-Atacar 2-Socorrer 0-Sair)\n");
 	    	scanf("%d", &acao);
 	    	fflush(stdin);
 		 
 			// INFORMA O TIPO DE AÇÃO ESCOLHIDO	PELO JOGADOR E CRIA REGRA DE NEGÓCIOS PARA CADA ACAO
 	    	if (acao == 1 ) { // SE ACAO FOR ATACAR
-	    		printf("\nVocê escolheu ATACAR\n");
+	    		printf(YELLOW"\nVocê escolheu ATACAR\n" RESET);
 	    	
-	    		printf("\nCom qual das suas mãos você quer atacar? (1-Direita 2-Esquerda)\n");
+	    		printf(YELLOW"\nCom qual dos seus conjuradores você quer atacar? " RESET);
+	    		if (gamer == 1) {
+					printf("(1-Edranyl 2-Alaric)\n");
+				}
+				else {
+					printf("(1-Gardel 2-Esdras)\n");
+				}
 	    		scanf("%d", &maoAttack);
 	    		int maoAttackcor = maoAttack - 1;
-	    			
-	    			if (maoAttackcor < 0 || maoAttackcor > 1 || (gamer == 1 && j1[maoAttackcor] == 5) || (gamer == 2 && j2
-					[maoAttackcor] == 5)) {
-						printf("Mão inválida! Escolha uma mão que ainda esteja ativa.\n");
+	    			fflush(stdin);
+	    			if (maoAttackcor < 0 || maoAttackcor > 1 || (gamer == 1 && j1[maoAttackcor] == 5) || (gamer == 2 && j2[maoAttackcor] == 5)) {
+						printf(YELLOW "Personagem inválido! Escolha um conjurador que ainda esteja batalhando.\n\n Insira qualquer valor para continuar. \n" RESET);
+						scanf("%d", conf);
 						continue;}
 					
 					else { 	
    	   	    
-	    			printf("\nQual mão do seu adversário você quer atacar? (1-Direita 2-Esquerda)\n");
+	    			printf(YELLOW "\nQual Conjurador do seu adversário você quer atacar? " RESET);
+	    			if(gamer == 1) {
+						printf("(1-Gardel 2-Esdras)\n");
+					}
+					else {
+						printf("(1-Edranyl 2-Alaric)\n");
+					}
+	    			
 	    			scanf("%d", &maoDefesa);
 					int maoDefesacor = maoDefesa - 1;
+	    			fflush(stdin);
 	    			
 	    					if (maoDefesacor < 0 || maoDefesacor > 1 || (gamer == 1 && j2[maoDefesacor] == 5) || (gamer == 2 && j1[maoDefesacor] == 5)) {
-	    						printf("Mão inválida! Escolha uma mão que ainda esteja ativa.\n");
+	    						printf(YELLOW "Personagem inválido! Escolha um conjurador que ainda esteja batalhando.\n\n Insira qualquer valor para continuar. \n" RESET);
+	    						scanf("%d", conf);
 								continue;}
 	    					else {	   	
     		
@@ -122,28 +170,29 @@ int main() {
 					} 
 			} 
 			else if (acao == 2) { // SE AÇÃO FOR SOCORRER
-				printf("Você escolheu SOCORRER.\n");
+				printf(YELLOW "Você escolheu SOCORRER.\n" RESET);
 			
 				if (gamer == 1) {
-					if ((j1[0]+j1[1]) % 2 == 0 && !(j1[0] == j1[1])){
+					if ((j1[0]+j1[1]) % 2 == 0 && !(j1[0] == j1[1]) && j1[0] != 5 && j1[1] != 5){
 						j1[0] = j1[1] = (j1[0]+j1[1])/2;
 	  	  	  	    }	
 				
 					else{
 					
-						if (j1[1] == 5 && (j1[0] += 0) % 2 == 0 ){
+						if (j1[1] == 5 && j1[0] % 2 == 0 ){
 							j1[1] = 0;
 							j1[0] = j1[1] = (j1[0]+j1[1])/2; 	
 						
 						}
 					
-						else if(j1[0] == 5 && (j1[1] += 0) % 2 == 0 ) {
+						else if(j1[0] == 5 && j1[1] % 2 == 0 ) {
 							j1[0] = 0	;
 							j1[1] = j1[0] = (j1[0]+j1[1]/2)	;
 						}
 					
 						else{
-							printf("operação inválida\n");
+							printf(YELLOW "Operação inválida.\n\n Insira qualquer valor para continuar.\n" RESET);
+							scanf("%d", conf);
 							continue;
 						}
 					}
@@ -152,32 +201,34 @@ int main() {
 				
 				
 				if (gamer == 2) {
-					if ((j2[0]+j2[1]) % 2 == 0 && !(j2[0] == j2[1])){
+					if ((j2[0]+j2[1]) % 2 == 0 && !(j2[0] == j2[1]) && j2[0] !=5 && j2[1] !=5){
 						j2[0] = j2[1] = (j2[0]+j2[1])/2;
 					}
 				
 					else{
 					
-						if (j2[1] == 5 && (j2[0] += 0) % 2 == 0 ){
+						if (j2[1] == 5 && j2[0] % 2 == 0 ){
 							j2[1] = 0;
 							j2[0] = j2[1] = (j2[0]+j2[1])/2; 	
 						
 						}
 					
-						else if(j2[0] == 5 && (j2[1] += 0) % 2 == 0 ) {
+						else if(j2[0] == 5 && j2[1] % 2 == 0 ) {
 							j2[0] = 0;
 							j2[1] = j2[0] = (j2[0]+j2[1])/2;
 						}
 						
 						else if(j2[0] == j2[1]) {
-							printf("operação inválida\n");
+							printf(YELLOW "Operação inválida\n\n Insira qualquer valor para continuar.\n" RESET);
+							scanf("%d", conf);
 							continue;
 							
 						}
 				
 				
 						else {
-							printf("operação inválida\n");
+							printf(YELLOW "Operação inválida\n\n Insira qualquer valor para continuar.\n" RESET);
+							scanf("%d", conf);
 							continue;
 				
 							}
@@ -194,8 +245,8 @@ int main() {
 				return 0;
 			}
 			
-			else {
-				system("cls");
+			else if (acao != (acao >= 0 && acao <= 2) ){ 
+							system("cls");
 				printf("\nBoa tentativa.\n 1-Desculpa\n 2-Perdão\n");
 				scanf("%d", &egua);
 				continue;
@@ -208,74 +259,81 @@ int main() {
 		
 		// FIM DO JOGO ========================================================================================
 		
-		system("cls");
+			system("cls");
 			
-			printf("NUMERO DO JOGADOR: %d\n\n", gamer);
-			printf("======================================================================================================\n");
-			printf("JOGADOR 1:\t\t");
+			printf(BEGE "======================================================================================================\n" RESET);
+			printf(RED"FEITICEIROS:\t\t"RESET);
 	    	
 			if (j1[0] < 5) {
-				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+				printf("Edranyl:");
+				printf(CYAN " %d° Ciclo de Mana\t\t" RESET, j1[0]);
 			} 
 			else if (j1[0] > 5){
 				j1[0] -= 5;
-				printf("Mão direita: %d Dedo(s)\t\t", j1[0]);
+				printf( "Edranyl:"); 
+				printf(CYAN " %d° Ciclo de Mana\t\t" RESET , j1[0]);
 			} 
 			else {	
-				printf("Mão direita ELIMINADA\t\t");    	
+				printf(MAGENTA "Edranyl Paralisado\t\t\t" RESET);    	
 			}
 			//====================================
 			if (j1[1] < 5) {
-				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+				printf("Alaric:\t");
+				printf (CYAN "%d° Ciclo de Mana\t\t\n" RESET, j1[1]);
 			}
 			else if (j1[1] > 5) {
 				j1[1] -= 5;
-				printf("Mão esquerda: %d Dedo(s)\t\t\n", j1[1]);
+				printf("Alaric:\t");
+				printf(CYAN"%d° Ciclo de Mana\t\t\n" RESET, j1[1]);
 			}
 			else {
-				printf("Mão esquerda ELIMINADA\t\t\n"); 
+				printf(MAGENTA "Alaric\tParalisado\t\t\n" RESET); 
 			}   	
 			//===================================
-			printf("======================================================================================================\n");
-	    	printf("JOGADOR 2:\t\t");
+			printf(BEGE "======================================================================================================\n" RESET);
+	    	printf(BLUE "MAGOS:\t\t\t" RESET);
 	    	
 			if (j2[0] < 5) { 
-				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+				printf("Gardel:\t");
+				printf(CYAN " %d° Ciclo de Mana \t\t" RESET, j2[0]);
 			}
 	 		else if (j2[0] > 5) {
 				j2[0] -= 5;
-				printf("Mão direita: %d Dedo(s)\t\t", j2[0]);
+				printf("Gardel:\t");
+				printf(CYAN " %d° Ciclo de Mana(s)\t\t" RESET, j2[0]);
 			}
 			 else {
-			  printf("Mão direita ELIMINADA\t\t");
+			  printf(MAGENTA "Gardel\t Paralisado\t\t\t" RESET);
 			}  
 			//====================================  	
 	    	
 			if (j2[1] < 5) { 
-				 printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+				 printf("Esdras:\t"); 
+				 printf(CYAN "%d° Ciclo de Mana\t\t\n" RESET, j2[1]);
 			}
 			else if (j2[1] > 5){
 				 	j2[1] -= 5;
-				printf("Mão esquerda: %d Dedo(s)\t\t\n", j2[1]);
+				printf("Esdras:\t");
+				printf(CYAN "%d° Ciclo de Mana\t\t\n" RESET, j2[1]);
 			}
 			else {	
-			  printf("Mão esquerda ELIMINADA\t\t\n");
-			  
-			  
+			  printf(MAGENTA"Esdras\tParalisado\t\t\n"RESET);
 			}  
 			//====================================
-			printf("======================================================================================================\n\n");
+			printf(BEGE "======================================================================================================\n\n" RESET);
 			
-			if (j1[0] <5 && j1[1] < 5){
-				printf("Jogador 1 foi o vencedor!\n");
+			if (j1[0] <5 || j1[1] < 5){
+				printf(YELLOW"Jogador 1 foi o vencedor!\n "RESET);
+				printf(RED"\n======================================================================================================\n"RESET);
+				printf(YELLOW"                                    VITÓRIA DOS FEITICEIROS!\n"RESET);
+				printf(RED"======================================================================================================\n"RESET);
 			}
-			if(j2[0] <5 && j2[1] < 5){
-				printf("Jogador 2 foi o vencedor!\n");
+			if(j2[0] <5 || j2[1] < 5){
+				printf(YELLOW "Jogador 2 foi o vencedor!\n" RESET);
+				printf(BLUE"\n======================================================================================================\n"RESET);
+				printf(YELLOW"                                    VITÓRIA DOS MAGOS!\n");
+				printf(BLUE"======================================================================================================\n"RESET);
 			}
-			
-				printf("\n======================================================================================================\n");
-				printf("                                    OBRIGADO POR JOGAR!\n");
-				printf("======================================================================================================\n");
 				printf("1-continuar\n2-voltar ao menu\n");
 				scanf("%d", &ordem);
 
