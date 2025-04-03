@@ -134,7 +134,7 @@ int main() {
 	    			fflush(stdin);
 	    			if (maoAttackcor < 0 || maoAttackcor > 1 || (gamer == 1 && j1[maoAttackcor] == 5) || (gamer == 2 && j2[maoAttackcor] == 5)) {
 						printf(YELLOW "Personagem inválido! Escolha um conjurador que ainda esteja batalhando.\n\n Insira qualquer valor para continuar. \n" RESET);
-						scanf("%d", conf);
+						scanf("%d", &conf);
 						continue;}
 					
 					else { 	
@@ -153,7 +153,7 @@ int main() {
 	    			
 	    					if (maoDefesacor < 0 || maoDefesacor > 1 || (gamer == 1 && j2[maoDefesacor] == 5) || (gamer == 2 && j1[maoDefesacor] == 5)) {
 	    						printf(YELLOW "Personagem inválido! Escolha um conjurador que ainda esteja batalhando.\n\n Insira qualquer valor para continuar. \n" RESET);
-	    						scanf("%d", conf);
+	    						scanf("%d", &conf);
 								continue;}
 	    					else {	   	
     		
@@ -192,7 +192,7 @@ int main() {
 					
 						else{
 							printf(YELLOW "Operação inválida.\n\n Insira qualquer valor para continuar.\n" RESET);
-							scanf("%d", conf);
+							scanf("%d", &conf);
 							continue;
 						}
 					}
@@ -220,7 +220,7 @@ int main() {
 						
 						else if(j2[0] == j2[1]) {
 							printf(YELLOW "Operação inválida\n\n Insira qualquer valor para continuar.\n" RESET);
-							scanf("%d", conf);
+							scanf("%d", &conf);
 							continue;
 							
 						}
@@ -228,7 +228,7 @@ int main() {
 				
 						else {
 							printf(YELLOW "Operação inválida\n\n Insira qualquer valor para continuar.\n" RESET);
-							scanf("%d", conf);
+							scanf("%d", &conf);
 							continue;
 				
 							}
