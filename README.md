@@ -41,19 +41,31 @@ Cinco perguntas são feitas ao usuário. Caso estas sejam respondidas corretamen
 Grimórios e Pergaminhos foi a minha versão do jogo Gousmas War, mas com algumas alterações nas regras, que eu pedi ao professor a permissão de fazer. Seguem os requisitos iniciais, com as substiutições que eu fiz nos respectivos objetivos.
 
 ● Cada jogador inicia com duas Gousmas, cada uma com nível de fúria 1;
+####Alteração:
+Aqui a mudança foi puramente estética. Ao invés de Gousmas, cada jogador começa com seus dois personagens: Edranyl e Alaric (feiticeiros) ou Gardel e Esdras (magos). Além disso, ao invés dos "níveis de fúria", os personagens possuem "ciclos de mana". 
 
 ● Quando uma Gousma ataca outra, transfere todo o seu nível de fúria
 para a Gousma atacada;
 
 ● Se uma Gousma atingir um nível de fúria maior que 5, ela se desintegra ; 
+#### Alteração: 
+Programei o jogo para que os magos (gousmas) fiquem apenas "paralisados" se, e apenas se, chegarem ao 5° ciclo de mana (5 pontos de fúria). Assim, ele pode retornar ao jogo depois, como será explicado futuramente. Caso seu ciclo de mana (nível de fúria) ultrapasse 5, ele fica apenas com o resto. Por exemplo: se um feiticeiro com o 4° ciclo de mana ataca um mago que está no 3° ciclo, o mago ficará com o 2° (4+3-5) ciclo de mana, ao invés de paralisar.
 
 ● O jogador pode optar por dividir uma Gousma, transferindo uma parte da
 fúria para uma nova Gousma (respeitando o limite de duas Gousmas por
 jogador);
+####Alteração:
+Os conjuradores de cada jogador só podem dividir entre si seus ciclos de mana quando a soma entre os dois é par. Além disso, um conjurador paralisado (que para a regra de divisão é considerado com o seu ciclo de mana em 0), pode voltar ao jogo se seu parceiro estiver em um ciclo de mana par.
 
 ● O jogador que perder todas as suas Gousmas será derrotado;
 
 ● Ao final do jogo, o jogador pode optar por reiniciar ou retornar ao menu
 principal.
 
-#### aaaaaaaaaa
+### Processo de Criação
+Sinceramente, não lembro quando foi que surgiu a ideia de magos e feiticeiros se enfrentando no lugar das "gousmas". Talvez tenha sido por um determinado impelimento por tornar o meu trabalho o mais original possível. Há anos eu tenho esse gosto por histórias de fantasia medieval, então acho que em algum momento a história apenas surgiu na minha mente e eu a agarrei.
+
+### Funcionamento
+Aqui não tem nada de muito diferente do que foi explicado na descrição dos requisitos para a criação do jogo. O jogo vai sempre começar no turno dos feiticeiros, e cada jogador terá direito à uma ação (atacar ou dividir) até que os dois personagens de um dos jogadores esteja paralisado. Após diversos testes feitos por via de terceiros, creio que a alteração das regras resultou em uma maior variedade de jogadas e estratégias, tornando o jogo mais divertido.
+
+## Menu Inicial
