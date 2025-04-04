@@ -19,4 +19,21 @@ Como eu posso explicar?
 
 ![image](https://github.com/user-attachments/assets/a56377cf-12d2-432e-8e43-1803c7751c49)
 
-É... acho que a inspira~çao já ficou meio óbvia...
+É... acho que a inspiração já ficou meio óbvia...
+
+### Criação das Perguntas
+Então eu basicamente criei o jogo já tendo em mente que as perguntas seriam de um tema comicamente tosco em relação aos riscos presentes na história. Após muito refletir, escolhi que o tema seria "futebol paraense". Infelizmente, eu detesto futebol, então criar tais perguntas não seria possível sem a ajuda da nossa "pessoinha de luz" favorita... o tão aclamado Chat GPT.
+
+https://chatgpt.com/share/67ef4e4e-24a8-8008-a929-67164f46755e
+
+NOTA: o GPT também foi usado para conseguir as cores nas tabelas ASCI, mas esse e outros usos, que foram usados em quase todo o programa, eu vou deixar para falar mais para a frente.
+
+### Funcionamento
+O funcionamento do jogo é simples, e na verdade, ao cria-lo eu tentei não fugir muito das instruções iniciais (ao contrário do terceiro jogo). 
+
+Cinco perguntas são feitas ao usuário. Caso estas sejam respondidas corretamente, o usuário marca 1 ponto por cada resposta correta. Ao fim do jogo, o usuário recebe sua pontuação, referente à soma de seus acertos e o final que ele conseguiu na história:
+
+● Até 2 pontos para o final ruim;
+● De 3 à 4 pontos para o final neutro; e
+● 5 pontos para o final bom.
+
