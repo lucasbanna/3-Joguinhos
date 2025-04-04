@@ -84,3 +84,5 @@ Além disso, usei o chat para aprender a fazer com que o texto no monitor tivess
 
 Infelizmente, não é possível mandar o link para essas conversar com o chat GPT por que a openIA ainda não disponibilizou suporte para o compartilhamento de conversas com imagens carregadas pelos usuários.
 
+## No Mais
+Deixo aqui meus agradecimentos aos meus amigos que me ajudaram a encontrar bugs (principalmente no Grimórios e Pergaminhos) para consertar, ao professor Girotto e ao meu pai que me ajudou a formular o menu de jogo do Grimórios e Pergaminhos.
