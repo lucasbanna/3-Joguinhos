@@ -74,5 +74,12 @@ Sinceramente, não lembro quando foi que surgiu a ideia de magos e feiticeiros s
 ### Funcionamento
 Aqui não tem nada de muito diferente do que foi explicado na descrição dos requisitos para a criação do jogo. O jogo vai sempre começar no turno dos feiticeiros, e cada jogador terá direito à uma ação (atacar ou dividir) até que os dois personagens de um dos jogadores esteja paralisado. Após diversos testes feitos por via de terceiros, creio que a alteração das regras resultou em uma maior variedade de jogadas e estratégias, tornando o jogo mais divertido.
 
-## Menu Inicial e funcionamento geral do código.
+## Menus Iniciais e funcionamento geral do código.
+Pedi ao chat gpt que me desse um modelo de código para um menu inicial, que eu devo ter usado pelo menos três vezes ao longo do código: uma para cada um dos dois jogos e um para o menu principal, que ligaria os três jogos (novamente, apenas dois) entre si.
 
+link da conversa em que o chat criou o código:
+https://chatgpt.com/share/67ef55fc-f050-8008-a934-f75ca2c488e1
+
+Além disso, usei o chat para aprender a fazer com que o texto no monitor tivesse cor e também para criar este efeito em que as letras aparecem uma por vez.
+
+Infelizmente, não é possível mandar o link para essas conversar com o chat GPT por que a openIA ainda não disponibilizou suporte para o compartilhamento de conversas com imagens carregadas pelos usuários.
