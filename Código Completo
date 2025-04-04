@@ -56,7 +56,7 @@ int menu() {
         typeText(YELLOW " 3 - " RESET BLUE "GRIMÓRIOS "RESET YELLOW"E"RESET RED" PERGAMINHOS\n"RESET, 20);
         typeText(YELLOW " 4 -" RESET " SAIR\n", 20);
         typeText(CYAN "==============================\n" RESET, 10);
-        typeText(YELLOW " Escolha uma opção: "RESET);
+        typeText(YELLOW " Escolha uma opção: "RESET, 100);
         scanf("%d", &opcao);
 		fflush(stdin);		
 				
