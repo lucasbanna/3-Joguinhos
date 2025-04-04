@@ -62,10 +62,17 @@ Os conjuradores de cada jogador só podem dividir entre si seus ciclos de mana q
 ● Ao final do jogo, o jogador pode optar por reiniciar ou retornar ao menu
 principal.
 
+![image](https://github.com/user-attachments/assets/1adf361e-e919-4239-8adb-ce79c02ff1ec)
+
+
 ### Processo de Criação
 Sinceramente, não lembro quando foi que surgiu a ideia de magos e feiticeiros se enfrentando no lugar das "gousmas". Talvez tenha sido por um determinado impelimento por tornar o meu trabalho o mais original possível. Há anos eu tenho esse gosto por histórias de fantasia medieval, então acho que em algum momento a história apenas surgiu na minha mente e eu a agarrei.
+
+![image](https://github.com/user-attachments/assets/e0030eaa-5c67-4f32-9391-32948dd92cd6)
+
 
 ### Funcionamento
 Aqui não tem nada de muito diferente do que foi explicado na descrição dos requisitos para a criação do jogo. O jogo vai sempre começar no turno dos feiticeiros, e cada jogador terá direito à uma ação (atacar ou dividir) até que os dois personagens de um dos jogadores esteja paralisado. Após diversos testes feitos por via de terceiros, creio que a alteração das regras resultou em uma maior variedade de jogadas e estratégias, tornando o jogo mais divertido.
 
-## Menu Inicial
+## Menu Inicial e funcionamento geral do código.
+
