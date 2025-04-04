@@ -37,3 +37,23 @@ Cinco perguntas são feitas ao usuário. Caso estas sejam respondidas corretamen
 ● De 3 à 4 pontos para o final neutro; e
 ● 5 pontos para o final bom.
 
+## Grimórios e Pergaminhos
+Grimórios e Pergaminhos foi a minha versão do jogo Gousmas War, mas com algumas alterações nas regras, que eu pedi ao professor a permissão de fazer. Seguem os requisitos iniciais, com as substiutições que eu fiz nos respectivos objetivos.
+
+● Cada jogador inicia com duas Gousmas, cada uma com nível de fúria 1;
+
+● Quando uma Gousma ataca outra, transfere todo o seu nível de fúria
+para a Gousma atacada;
+
+● Se uma Gousma atingir um nível de fúria maior que 5, ela se desintegra ; 
+
+● O jogador pode optar por dividir uma Gousma, transferindo uma parte da
+fúria para uma nova Gousma (respeitando o limite de duas Gousmas por
+jogador);
+
+● O jogador que perder todas as suas Gousmas será derrotado;
+
+● Ao final do jogo, o jogador pode optar por reiniciar ou retornar ao menu
+principal.
+
+#### aaaaaaaaaa
