@@ -1,3 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <locale.h>
+
+#define RESET   "\x1B[0m"
+#define RED     "\x1B[31m"
+#define BLUE    "\x1B[34m"
+#define CYAN 	"\e[0;96m"
+#define MAGENTA "\x1B[35m"
+#define BEGE 	"\033[38;5;138m"
+#define YELLOW  "\x1B[33m"
+#define PURPLE 	"\033[38;5;55m"
+#define PINK 	"\033[38;2;241;7;138m"
+#define BROWN	"\033[38;2;101;67;33m"
+
+void typeText(const char *text, int delay) {												
+    while (*text) {
+        putchar(*text++);
+        fflush(stdout);  // Garante que o texto apareça imediatamente
+        usleep(delay * 1000);  // Converte milissegundos para microssegundos
+    }
+}
+
+
+
 int menu() {
     int opcao;
     do {
