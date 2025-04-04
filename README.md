@@ -66,7 +66,7 @@ principal.
 
 
 ### Processo de Criação
-Sinceramente, não lembro quando foi que surgiu a ideia de magos e feiticeiros se enfrentando no lugar das "gousmas". Talvez tenha sido por um determinado impelimento por tornar o meu trabalho o mais original possível. Há anos eu tenho esse gosto por histórias de fantasia medieval, então acho que em algum momento a história apenas surgiu na minha mente e eu a agarrei.
+Sinceramente, não lembro quando foi que surgiu a ideia de magos e feiticeiros se enfrentando no lugar das "gousmas". Talvez tenha sido por um determinado impelimento em tornar o meu trabalho o mais original possível (costumo ser meio chato em relação a isso). Há anos eu tenho esse gosto por histórias de fantasia medieval, então acho que em algum momento a história apenas surgiu na minha mente e eu a agarrei.
 
 ![image](https://github.com/user-attachments/assets/e0030eaa-5c67-4f32-9391-32948dd92cd6)
 
