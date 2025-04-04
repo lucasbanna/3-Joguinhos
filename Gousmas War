@@ -3,7 +3,6 @@
 #include <locale.h>
 #include <unistd.h>
  
-//gepeto me ajudou daqui...
 
 #define RESET   "\x1B[0m"
 #define RED     "\x1B[31m"
@@ -20,8 +19,6 @@ void typeText(const char *text, int delay) {
         usleep(delay * 1000);  // Converte milissegundos para microssegundos
     }
 }
-//... até aqui.
-
 int gp();
 int tutorial3();
 int lore3();
