@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <unistd.h>
+
+//gepeto me ajudou daqui...
 
 #define RESET   "\x1B[0m"
 #define RED     "\x1B[31m"
@@ -10,12 +13,102 @@
 #define BEGE 	"\033[38;5;138m"
 #define YELLOW  "\x1B[33m"
 
-int main() {
-	
+void typeText(const char *text, int delay) {												
+    while (*text) {
+        putchar(*text++);
+        fflush(stdout);  // Garante que o texto apareça imediatamente
+        usleep(delay * 1000);  // Converte milissegundos para microssegundos
+    }
+}
+//... até aqui.
+
+int gp();
+int tutorial3();
+int lore3();
+int menu3();
+int lixo;
+
+int jogo3() {
+
 	setlocale(LC_ALL,"");
+	return menu3();
+		
+}
+
+int menu3 (){
+	
+	int opcao;
+    do {
+    	system("cls");
+    	typeText(BEGE "========================\n" RESET, 10);
+        typeText(BLUE "GRIMÓRIOS " RESET YELLOW"& " RESET RED "PERGAMINHOS\n\n" RESET, 50);
+        typeText("1 - Iniciar Batalha \n", 20);
+        typeText("2 - Como Jogar \n", 20);
+        typeText("3 - História \n", 20);
+        typeText("4 - Sair\n", 20);
+  		typeText(BEGE "========================\n" RESET, 10);
+        typeText(YELLOW "Escolha uma opção: " RESET, 100);
+        scanf("%d", &opcao);
+        fflush(stdin);
+
+		if (opcao == 1 || opcao == 2 || opcao == 3 || opcao == 4){
+		
+        	switch (opcao) {
+        		    case 1:
+        		        gp();
+        	        break;
+        		    case 2:
+        		        tutorial3();
+        	        break;
+        		    case 3:
+        		        lore3();
+        	        break;
+        		    case 4:
+        		        printf("Saindo...\n");
+        		        return 0;
+        		    default:
+        		       	system("cls");
+        		        printf("Opção inválida. Tente novamente.\n");
+        	}
+		}
+ 	   else if (opcao != (opcao >=1 && opcao <= 4 )){ 
+			printf(YELLOW "Opção inválida. Insira qualquer valor inteiro para continuar.\n" RESET);
+			scanf("%d", &lixo);
+			continue;
+		}
+        
+    } while (opcao != 4);
+    return 0;
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+int tutorial3() {
+	return 0;
+}
+
+int lore3 () {
+	return 0;
+}
+
+
+int gp(){
+	
     
+    int ordem; 
     
-    int j1[2] = {1,1}; // MAOS DO JOGADOR 1 INICIANDO COM UM DEDO CADA
+    do{
+    
+	int j1[2] = {1,1}; // MAOS DO JOGADOR 1 INICIANDO COM UM DEDO CADA
     int j2[2] = {1,1}; // MAOS DO JOGADOR 2 INICIANDO COM UM DEDO CADA
     
     int maoAttack; // 1 - MAO ESQUERDA 	2 - MAO DIREITA
@@ -27,11 +120,35 @@ int main() {
     
     int egua;
     
-    int ordem; 
-    
     int conf;
     
+    //========================================ANIMAÇÃO DO INÍCIO
+    system("cls");
+	printf("Grimórios_&_Pergaminhos versão 0.alguma coisa\n\n");
+	typeText(YELLOW "TURNO DOS " RESET RED "FEITICEIROS!\n\n" RESET, 5);
     
+	typeText(BEGE "======================================================================================================\n" RESET, 1);
+		
+	typeText(RED"FEITICEIROS:\t\t"RESET, 5);
+	
+	typeText("Edranyl:" CYAN " 1° Ciclo de Mana\t\t" RESET, 5);
+		
+	typeText("Alaric:" CYAN " 1° Ciclo de Mana\t\t\n" RESET, 5);
+	
+	typeText(BEGE "======================================================================================================\n" RESET, 1);
+	
+	typeText(BLUE "MAGOS:\t\t\t" RESET, 5);
+
+	typeText("Gardel: " CYAN " 1° Ciclo de Mana\t\t" RESET, 5);
+	
+	typeText("Esdras:" CYAN " 1° Ciclo de Mana \t\t\n" RESET, 5);
+	
+	typeText(BEGE "======================================================================================================\n\n" RESET, 1);
+	
+	typeText(YELLOW "JOGADOR 1, QUAL AÇÃO VOCÊ DESEJA EXECUTAR?" RESET, 100);
+	typeText(" (1-Atacar 2-Socorrer 0-Sair)\n", 100);
+	
+	//=================================AQUI COMEÇA O JOGO ==========================================	
 	    while ((j1[0] <5 || j1[1] < 5 || j1[0] > 5 || j1 [1] > 5) && (j2[0] < 5 || j2[1] < 5 || j2[0] > 5 || j2[1] > 5)  ) {	
 	    	
 			system("cls"); // limpar a tela
@@ -47,6 +164,8 @@ int main() {
 			else{
 				printf(YELLOW "TURNO DOS " RESET);
 				printf(BLUE "MAGOS!\n\n" RESET);
+				
+				
 			}
 			
 			
@@ -239,9 +358,9 @@ int main() {
 			
 			else if (acao == 0) {
 				system("cls");
-				printf("\n======================================================================================================\n");
-				printf("                                    OBRIGADO POR JOGAR!\n");
-				printf("======================================================================================================\n");
+				printf(BEGE"\n======================================================================================================\n" RESET);
+				printf(YELLOW"                                    OBRIGADO POR JOGAR!\n"RESET);
+				printf(BEGE"======================================================================================================\n" RESET);
 				return 0;
 			}
 			
@@ -317,7 +436,7 @@ int main() {
 				printf(CYAN "%d° Ciclo de Mana\t\t\n" RESET, j2[1]);
 			}
 			else {	
-			  printf(MAGENTA"Esdras\tParalisado\t\t\n"RESET);
+			  printf(MAGENTA"Esdras\tParalisado\t\t\n" RESET);
 			}  
 			//====================================
 			printf(BEGE "======================================================================================================\n\n" RESET);
@@ -334,8 +453,11 @@ int main() {
 				printf(YELLOW"                                    VITÓRIA DOS MAGOS!\n");
 				printf(BLUE"======================================================================================================\n"RESET);
 			}
-				printf("1-continuar\n2-voltar ao menu\n");
+				printf("1-Revanche\n2-Retornar ao Menu\n");
 				scanf("%d", &ordem);
+	} while (ordem == 1);				
+	
+				
 
 		
    	   //============================================================================================	
