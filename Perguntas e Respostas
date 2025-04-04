@@ -1,0 +1,221 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <locale.h>
+
+#define RESET   "\x1B[0m"
+#define RED     "\x1B[31m"
+#define BLUE    "\x1B[34m"
+#define CYAN 	"\e[0;96m"
+#define MAGENTA "\x1B[35m"
+#define BEGE 	"\033[38;5;138m"
+#define YELLOW  "\x1B[33m"
+#define PURPLE 	"\033[38;5;55m"
+#define PINK 	"\033[38;2;241;7;138m"
+
+void typeText(const char *text, int delay) {												
+    while (*text) {
+        putchar(*text++);
+        fflush(stdout);  // Garante que o texto apareça imediatamente
+        usleep(delay * 1000);  // Converte milissegundos para microssegundos
+    }
+}
+
+int ccb();
+int menu1();
+int lore1();
+int cont;
+
+
+int main() {
+
+	setlocale(LC_ALL,"");
+	return menu1();
+		
+}
+
+int menu1() {
+    int opcao;
+    do {
+    	system("cls");
+    	typeText(PURPLE"==============================" RESET, 10);
+        typeText(PINK"\nCAVALO CELESTIAL BUDISTA\n" RESET, 50);
+        typeText("1 - Começar \n", 20);
+        typeText("2 - História \n", 20);
+        typeText("3 - Sair\n", 20);
+  		typeText(PURPLE"==============================\n" RESET, 10);
+        typeText(YELLOW "Escolha uma opção: " RESET, 100);
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                ccb();
+                break;
+            case 2:
+				lore1();
+                break;
+            case 3:
+                printf("Saindo...\n");
+                return 0;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+        }
+    } while (opcao != 3);
+    return 0;
+}
+
+
+int lore1(){
+	system("cls");
+	typeText(YELLOW"O mundo está sob grave risco.\nO"RESET PINK" Cavalo Celestial Budista"RESET YELLOW" abandonou seus estudos e fugiu de "RESET BLUE"Dundee"RESET YELLOW", seu planeta natal, para se aventurar pela Terra.\nComo retaliação, o "RESET RED"Imperador Supremo Unicórnio Dragão Universal"RESET YELLOW" mandou a"RESET RED" Mega Frota interestelar"RESET YELLOW" entrar em posição para\nexplodir o planeta. A única esperança da humanidade está no"RESET PINK" Cavalo Celestial Budista"RESET YELLOW", que deve provar suas capacidades \nintelectuais passando em uma prova com cinco questões objetivas sobre o " RESET "futebol paraense. "YELLOW" \nVocê, mero humano, foi encarregado de ajudar ele nessa missão.\nInsira qualquer valor para voltar ao menu.\n" RESET, 25);
+	scanf("%d", &cont);
+	fflush(stdin);
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int ccb (){
+	
+	int ordem;
+	
+	
+	do{
+	
+	int r1;
+	int r2;
+	int r3;
+	int r4;
+	int r5;
+	
+	int resultado = 0;
+	
+	system ("cls");
+	typeText(YELLOW"O mundo está sob grave risco.\nO"RESET PINK" Cavalo Celestial Budista"RESET YELLOW" abandonou seus estudos e fugiu de "RESET BLUE"Dundee"RESET YELLOW", seu planeta natal, para se aventurar pela"RESET CYAN" Terra."RESET YELLOW"\nComo retaliação, o "RESET RED"Imperador Supremo Unicórnio Dragão Universal"RESET YELLOW" mandou a"RESET RED" Mega Frota interestelar"RESET YELLOW" entrar em posição para\nexplodir o planeta. A única esperança da humanidade está no"RESET PINK" Cavalo Celestial Budista"RESET YELLOW", que deve provar suas capacidades \nintelectuais passando em uma prova com cinco questões objetivas sobre o " RESET "futebol paraense. "YELLOW" \nVocê, mero humano, foi encarregado de ajudar ele nessa missão.\nInsira qualquer valor para continuar.\n" RESET, 25);
+	scanf("%d", &cont);
+	fflush(stdin);
+	system("cls");
+	printf(YELLOW "1) Qual é o clube com mais títulos do Campeonato Paraense?\n 1-Remo \n 2-Paysandu\n 3-Tuna Luso\n 4-Cametá Sport Club\n "RESET);
+	scanf("%d", &r1);
+	fflush(stdin);
+
+	if(r1 == 2){
+		system("cls");
+		typeText(PINK "Resposta Correta!\n" RESET, 10);
+		resultado++ ;
+	}
+	
+	else if(r1 != 2){
+		system("cls");
+		typeText(RED "Resposta Errada.\nPreste atenção. O destino do Mundo depende disso!\n\n"RESET, 10);
+	}
+	
+	printf(YELLOW "2) Em que ano o Paysandu venceu a Copa dos Campeões e se classificou para a Libertadores?\n 1-1998\n 2-2000\n 3-2002\n 4-2004\n" RESET);	
+	scanf("%d", &r2);
+	fflush(stdin);
+	
+	if(r2 == 3){
+		system("cls");
+		typeText(PINK "Resposta Correta!\n" RESET, 10);
+		resultado++ ;
+	}
+	
+	else if(r2 != 3){
+		system("cls");
+		typeText(RED "Resposta Errada.\nPreste atenção. O destino do Mundo depende disso!\n\n"RESET, 10);
+	}
+	
+	printf(YELLOW "3) Qual é o nome do clássico entre Remo e Paysandu?\n 1-Clássico Amazônico\n 2-Clássico dos Campeões\n 3-Clássico Paraense\n 4-Re-Pa\n\n" RESET);	
+	scanf("%d", &r3);
+	fflush(stdin);
+	
+	if(r3 == 4){
+		system("cls");
+		typeText(PINK "Resposta Correta!\n" RESET, 10);
+		resultado++ ;
+	}
+
+	else if(r3 != 4){
+		system("cls");
+		typeText(RED "Resposta Errada.\nPreste atenção. O destino do Mundo depende disso!\n\n"RESET, 10);
+	}
+	
+	printf(YELLOW "4) Qual foi o primeiro clube paraense a disputar a Série A do Campeonato Brasileiro?\n 1-Remo \n 2-Paysandu\n 3-Tuna Luso\n 4-Cametá Sport Clube\n" RESET);	
+	scanf("%d", &r4);
+	fflush(stdin);
+	
+	if(r4 == 3){
+		system("cls");
+		typeText(PINK "Resposta Correta!\n" RESET, 10);
+		resultado++ ;
+	}
+	
+	else if(r4 != 3){
+		system("cls");
+		typeText(RED "Resposta Errada.\nPreste atenção. O destino do Mundo depende disso!\n\n"RESET, 10);
+	}
+	
+	printf(YELLOW "5) Em qual estádio o Clube do Remo manda seus jogos?\n 1-Curuzu\n 2-Baenão\n 3-Mangueirão\n 4-Navegantão\n" RESET);	
+	scanf("%d", &r5);
+	fflush(stdin);
+	
+	if(r5 == 2){
+		system("cls");
+		typeText(PINK "Resposta Correta!\n" RESET YELLOW"\nSuas chances chegaram ao fim. Hora de enfrentar as consequências das suas escolhas...\n\n" RESET, 10);
+		resultado++ ;
+	}
+	
+	else if(r5 != 2){
+		system("cls");
+		typeText(RED"Resposta Errada."RESET YELLOW"\nSuas chances chegaram ao fim. Hora de enfrentar as consequências das suas escolhas...\n\n" RESET, 10);
+	}
+	
+	printf("Insira qualquer valor para continuar.\n");
+	scanf("%d", &cont);
+	fflush(stdin);
+	
+	system("cls");
+	printf(YELLOW "Número de acertos: %d/5 " RESET, resultado);
+	
+	if(resultado == 5) {
+		typeText(PINK "\nO Mundo está finalmente salvo! Com o resultado máximo obtido no teste, o Cavalo Celestial Budista \nfinalmente pôde se tornar presidente universal e trazer a paz ao mundo!" RESET, 50);
+	}
+	else if(resultado == 3 || resultado == 4) {
+		typeText(CYAN "\nO Cavalo Celestial Budista passou no teste. A Terra está salva... por enquanto." RESET, 50);
+		
+		
+	}
+	else {
+	typeText(RED "\nHoje seria um dia triste para a humanidade... se ela ainda existisse.\n" RESET, 50);
+	};
+	
+	printf(YELLOW "\njogar de novo?\n1-sim\n2-não" RESET);
+	scanf("%d", &ordem);
+	fflush(stdin);
+	
+	}while (ordem == 1);
+	
+	
+	
+	
+	
+	
+}
