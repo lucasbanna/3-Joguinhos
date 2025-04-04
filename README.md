@@ -83,3 +83,4 @@ https://chatgpt.com/share/67ef55fc-f050-8008-a934-f75ca2c488e1
 Além disso, usei o chat para aprender a fazer com que o texto no monitor tivesse cor e também para criar este efeito em que as letras aparecem uma por vez.
 
 Infelizmente, não é possível mandar o link para essas conversar com o chat GPT por que a openIA ainda não disponibilizou suporte para o compartilhamento de conversas com imagens carregadas pelos usuários.
+
