@@ -18,4 +18,5 @@ Quando eu comecei a programar o jogo (e vale ressaltar que esse foi o último qu
 Como eu posso explicar?
 
 ![image](https://github.com/user-attachments/assets/a56377cf-12d2-432e-8e43-1803c7751c49)
+
 É... acho que a inspira~çao já ficou meio óbvia...
