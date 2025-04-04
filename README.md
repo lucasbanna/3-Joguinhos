@@ -6,7 +6,9 @@ Dito isso, a seguir segue a explicação do funcionamento dos dois jogos feitos,
 ## Cavalo Celestial Budista
 "Cavalo Celestial Budista", ou "Pergunta e Resposta", foi o primeiro jogo mencionado na atividade, além de ser o mais simples. Os requisitos para sua criação foram:
 ● O jogo conterá um total de cinco perguntas fixas;
+
 ● A ordem das perguntas e suas respostas não precisa ser alterada entre
 as rodadas;
+
 ● Ao finalizar, o jogador poderá optar por jogar novamente ou voltar ao
 menu principal.
