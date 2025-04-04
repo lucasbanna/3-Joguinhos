@@ -1,0 +1,35 @@
+int menu() {
+    int opcao;
+    do {
+    	system ("cls");
+    	typeText(CYAN "==============================\n" RESET, 10);
+        typeText("\tMENU PRINCIPAL\n", 50);
+        typeText(CYAN "==============================\n" RESET, 10);
+        typeText(YELLOW " 1 - " RESET PINK "CAVALO CELESTIAL BUDISTA\n"RESET, 20);
+        typeText(YELLOW " 2 - " RESET BROWN "COBRA NA CAIXA\n" RESET, 20);
+        typeText(YELLOW " 3 - " RESET BLUE "GRIMÓRIOS "RESET YELLOW"E"RESET RED" PERGAMINHOS\n"RESET, 20);
+        typeText(YELLOW " 4 -" RESET " SAIR\n", 20);
+        typeText(CYAN "==============================\n" RESET, 10);
+        typeText(YELLOW " Escolha uma opção: "RESET);
+        scanf("%d", &opcao);
+		fflush(stdin);		
+				
+        switch (opcao) {
+            case 1:
+                jogo1();
+                break;
+            case 2:
+                jogo2();
+                break;
+            case 3:
+                jogo3();
+                break;
+            case 4:
+                printf("Saindo...\n");
+                return 0;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+        }
+    } while (opcao != 4);
+    return 0;
+}
